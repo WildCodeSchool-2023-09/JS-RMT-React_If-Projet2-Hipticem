@@ -1,10 +1,12 @@
-import "./Carte.css";
-
 function Carte({ news }) {
   return (
-    <div>
-      <h1>{news.title}</h1>
-      <img src={news.urlToImage} alt={news.title} />
+    <div className="containerCarte">
+      <h1 className="containerNewsTitle">{news.title}</h1>
+      <img
+        className="containerNewsImage"
+        src={news.urlToImage}
+        alt={news.title}
+      />
     </div>
   );
 }

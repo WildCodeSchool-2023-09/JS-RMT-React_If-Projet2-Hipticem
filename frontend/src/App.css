@@ -56,5 +56,22 @@ button {
 }
 
 .containerNews {
-  display: grid;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.containerNewsImage {
+  height: 50%;
+}
+
+.containerNewsTitle {
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+
+.containerCarte {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
 }
