@@ -1,4 +1,5 @@
 const express = require("express");
+const client = require("../database/client");
 
 const router = express.Router();
 
@@ -19,7 +20,15 @@ const router = express.Router();
 // router.post("/items", itemControllers.add);
 
 router.get("/items", (req, res) => {
-  res.send("OK");
+  client
+    .query("SELECT * FROM item")
+    .then((result) => {
+      res.status(200).json(result[0]);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
 });
 
 /* ************************************************************************* */
