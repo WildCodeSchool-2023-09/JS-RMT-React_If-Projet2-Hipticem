@@ -21,7 +21,7 @@ const router = express.Router();
 
 router.get("/articles", (req, res) => {
   client
-    .query("SELECT * FROM article")
+    .query("SELECT * FROM article LIMIT 6")
     .then((result) => {
       res.status(200).json(result[0]);
     })
