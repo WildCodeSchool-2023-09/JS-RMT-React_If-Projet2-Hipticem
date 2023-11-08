@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import axios from "axios";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -9,6 +10,12 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    loader: async () => {
+      const items = await axios
+        .get(`${import.meta.env.VITE_BACKEND_URL}/api/items`)
+        .then((res) => res.data);
+      return items;
+    },
   },
 ]);
 
