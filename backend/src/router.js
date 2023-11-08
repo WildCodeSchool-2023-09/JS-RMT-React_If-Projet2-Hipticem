@@ -19,9 +19,9 @@ const router = express.Router();
 // Route to add a new item
 // router.post("/items", itemControllers.add);
 
-router.get("/items", (req, res) => {
+router.get("/articles", (req, res) => {
   client
-    .query("SELECT * FROM item")
+    .query("SELECT * FROM article")
     .then((result) => {
       res.status(200).json(result[0]);
     })

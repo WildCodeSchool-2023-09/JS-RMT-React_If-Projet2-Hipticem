@@ -1,15 +1,17 @@
 import { useLoaderData } from "react-router-dom";
 
 import "./App.css";
+import Carte from "./components/Carte";
 
 function App() {
-  const items = useLoaderData();
-
+  const articles = useLoaderData();
   return (
     <div className="App">
-      {items.map((item) => (
-        <h2 key={item.id}>{item.title}</h2>
-      ))}
+      <div className="containerNews">
+        {articles.map((news) => (
+          <Carte key={news.id} news={news} />
+        ))}
+      </div>
     </div>
   );
 }

@@ -1,9 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import axios from "axios";
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
 import App from "./App";
 
 const router = createBrowserRouter([
@@ -12,7 +10,7 @@ const router = createBrowserRouter([
     element: <App />,
     loader: async () => {
       const items = await axios
-        .get(`${import.meta.env.VITE_BACKEND_URL}/api/items`)
+        .get(`${import.meta.env.VITE_BACKEND_URL}/api/articles`)
         .then((res) => res.data);
       return items;
     },
