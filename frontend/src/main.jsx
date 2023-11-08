@@ -12,7 +12,7 @@ const router = createBrowserRouter([
     element: <App />,
     loader: async () => {
       const items = await axios
-        .get(`http://localhost:3310/api/items`)
+        .get(`${import.meta.env.VITE_BACKEND_URL}/api/items`)
         .then((res) => res.data);
       return items;
     },
