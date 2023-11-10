@@ -31,6 +31,22 @@ router.get("/articles", (req, res) => {
     });
 });
 
+router.get("/article/:id", (req, res) => {
+  const articleId = +req.params.id;
+  client
+    .query("SELECT * FROM article where id = ?", [articleId])
+    .then((result) => {
+      if (result[0].length === 0) {
+        res.status(404).send("Article not found");
+      } else {
+        res.status(200).json(result[0][0]);
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+      res.sendStatus(500);
+    });
+});
 /* ************************************************************************* */
 
 module.exports = router;
