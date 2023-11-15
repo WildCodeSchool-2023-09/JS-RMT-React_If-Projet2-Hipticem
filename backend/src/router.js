@@ -67,6 +67,18 @@ router.get("/authors", (req, res) => {
     });
 });
 
+router.get("/archives", (req, res) => {
+  client
+    .query("SELECT distinct(publishedAt) from article")
+    .then((result) => {
+      res.status(200).json(result[0]);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+});
+
 /* ************************************************************************* */
 
 module.exports = router;
