@@ -4,6 +4,7 @@ import axios from "axios";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import ArticlePage from "./pages/ArticlePage";
+import ActualitesPage from "./pages/ActualitesPage";
 
 const router = createBrowserRouter([
   {
@@ -13,9 +14,16 @@ const router = createBrowserRouter([
       const items = await axios
         .get(`${import.meta.env.VITE_BACKEND_URL}/api/articles`)
         .then((res) => res.data);
-      return items;
+
+      const authors = await axios
+        .get(`${import.meta.env.VITE_BACKEND_URL}/api/authors`)
+        .then((res) => res.data)
+        .catch((err) => console.error(err));
+
+      return { items, authors };
     },
   },
+
   {
     path: "/article/:articleId",
     element: <ArticlePage />,
@@ -27,6 +35,20 @@ const router = createBrowserRouter([
         )
         .then((res) => res.data);
       return article;
+    },
+  },
+  {
+    path: "/article/:articleId",
+    element: <ActualitesPage />,
+    loader: async ({ params }) => {
+      // Récupération de l'article spécifique
+      const actualité = await axios
+        .get(
+          `${import.meta.env.VITE_BACKEND_URL}/api/article/${params.articleId}`
+        )
+        .then((res) => res.data);
+
+      return { actualité };
     },
   },
 ]);
