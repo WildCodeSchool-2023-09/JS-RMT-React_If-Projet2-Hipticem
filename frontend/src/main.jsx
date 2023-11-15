@@ -4,7 +4,7 @@ import axios from "axios";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import ArticlePage from "./pages/ArticlePage";
-import ActualitesPage from "./pages/ActualitesPage";
+// import ActualitesPage from "./pages/ArchivesPage";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +22,11 @@ const router = createBrowserRouter([
         .then((res) => res.data)
         .catch((err) => console.error(err));
 
-      return { items, authors };
+      const archives = await axios
+        .get(`${import.meta.env.VITE_BACKEND_URL}/api/archives`)
+        .then((res) => res.data)
+        .catch((err) => console.error(err));
+      return { items, authors, archives };
     },
   },
 
@@ -39,20 +43,20 @@ const router = createBrowserRouter([
       return article;
     },
   },
-  {
-    path: "/article/:articleId",
-    element: <ActualitesPage />,
-    loader: async ({ params }) => {
-      // Récupération de l'article spécifique
-      const actualité = await axios
-        .get(
-          `${import.meta.env.VITE_BACKEND_URL}/api/article/${params.articleId}`
-        )
-        .then((res) => res.data);
+  // {
+  //   path: "/article/:articleId",
+  //   element: <ArchivesPage />,
+  //   loader: async ({ params }) => {
+  //     // Récupération de l'article spécifique
+  //     const archive = await axios
+  //       .get(
+  //         `${import.meta.env.VITE_BACKEND_URL}/api/article/${params.articleId}`
+  //       )
+  //       .then((res) => res.data);
 
-      return { actualité };
-    },
-  },
+  //     return archive;
+  //   },
+  // },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
