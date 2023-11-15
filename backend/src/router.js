@@ -20,8 +20,16 @@ const router = express.Router();
 // router.post("/items", itemControllers.add);
 
 router.get("/articles", (req, res) => {
+  let query = "SELECT * FROM article";
+  const values = [];
+  if (req.query.author) {
+    query += " where author = ?";
+    values.push(req.query.author);
+  }
+  query += " LIMIT 6";
+
   client
-    .query("SELECT * FROM article LIMIT 6")
+    .query(query, values)
     .then((result) => {
       res.status(200).json(result[0]);
     })
@@ -47,6 +55,18 @@ router.get("/article/:id", (req, res) => {
       res.sendStatus(500);
     });
 });
+router.get("/authors", (req, res) => {
+  client
+    .query("SELECT distinct(author) from article")
+    .then((result) => {
+      res.status(200).json(result[0]);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+});
+
 /* ************************************************************************* */
 
 module.exports = router;
