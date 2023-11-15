@@ -10,9 +10,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    loader: async () => {
+    loader: async ({ request }) => {
+      const url = new URL(request.url);
+
       const items = await axios
-        .get(`${import.meta.env.VITE_BACKEND_URL}/api/articles`)
+        .get(`${import.meta.env.VITE_BACKEND_URL}/api/articles${url.search}`)
         .then((res) => res.data);
 
       const authors = await axios
