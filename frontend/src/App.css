@@ -74,26 +74,32 @@ button {
 .buttonRetour {
   margin-top: 5rem;
   margin-left: 5rem;
+  padding: 3px;
   background-color: #e5e5ca;
   font-size: 30px;
   cursor: context-menu;
   font-family: serif;
-  border-radius: 10px;
+  border-radius: 8px;
   border: #717377 solid 1px;
   font-style: italic;
+  color: black;
+  text-decoration: none;
 }
 
 .buttonRetourBas {
   margin-top: 2rem;
   margin-left: 50rem;
   margin-bottom: 2rem;
+  padding: 3px;
   background-color: #e5e5ca;
   font-size: 30px;
   cursor: context-menu;
   font-family: serif;
-  border-radius: 10px;
+  border-radius: 8px;
   border: #717377 solid 1px;
   font-style: italic;
+  color: black;
+  text-decoration: none;
 }
 
 .titleArticle {
@@ -226,4 +232,52 @@ textarea {
 
 .footerUl {
   font-style: italic;
+}
+
+.authors {
+  background-color: #e5e5ca;
+  margin: 10px 20px 10px 10px;
+  font-size: 20px;
+  cursor: context-menu;
+  font-family: serif;
+  border-radius: 10px;
+  border: #717377 solid 1px;
+  font-style: italic;
+}
+
+.buttonRetourNav {
+  background-color: #e5e5ca;
+  margin: 10px 20px 10px 10px;
+  font-size: 13px;
+  cursor: context-menu;
+  font-family: serif;
+  border-radius: 10px;
+  border: #717377 solid 1px;
+  font-style: italic;
+  text-decoration: none;
+  color: black;
+}
+
+select {
+  background-color: #e5e5ca;
+  font-family: serif;
+  text-align: center;
+  font-style: italic;
+}
+
+.archive {
+  background-color: #e5e5ca;
+  margin: 10px 20px 10px 10px;
+  font-size: 20px;
+  cursor: context-menu;
+  font-family: serif;
+  border-radius: 10px;
+  border: #717377 solid 1px;
+  font-style: italic;
+}
+
+.hautDePage {
+  position: fixed;
+  right: 0;
+  border-radius: 50%;
 }

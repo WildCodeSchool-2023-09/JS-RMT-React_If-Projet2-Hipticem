@@ -1,6 +1,7 @@
 import React from "react";
-import { useLoaderData, useNavigate } from "react-router-dom";
-import Actualité from "./Actualité";
+import { useLoaderData, useNavigate, Link } from "react-router-dom";
+
+import Archives from "./Archives";
 
 function Navbar() {
   const { authors } = useLoaderData();
@@ -12,33 +13,37 @@ function Navbar() {
   };
 
   return (
-    <div className="navbar">
-      <div className="authors">
-        <select name="" id="" onChange={(e) => updateAuthor(e.target.value)}>
-          <option value="tous">tous</option>
-          {authors.map((aut) => {
-            return (
-              <option key={aut.author} value={aut.author}>
-                {aut.author}
-              </option>
-            );
-          })}
-        </select>
-      </div>
-
+    <div id="hautDePage" className="navbar">
       <div className="navbarActualité">
-        <Actualité />
-        <button type="button" className="buttonNavbar">
-          Archive
-        </button>
+        <div className="authors">
+          <label htmlFor="author">Recherche par auteurs :</label>
+          <select name="" id="" onChange={(e) => updateAuthor(e.target.value)}>
+            <option value="tous">Tous</option>
+            {authors.map((aut) => {
+              return (
+                <option key={aut.author} value={aut.author}>
+                  {aut.author}
+                </option>
+              );
+            })}
+          </select>
+          <Link to="/" className="buttonRetourNav">
+            Revenir
+          </Link>
+        </div>
+
+        <Archives />
+
         <button type="button" className="buttonNavbar">
           Recherche
         </button>
       </div>
       <div className="navbarContact">
-        <button type="button" className="buttonNavbar">
-          contact
-        </button>
+        <a href="#idFormulaire">
+          <button type="button" className="buttonNavbar">
+            contact
+          </button>
+        </a>
         <button type="button" className="buttonNavbar">
           Panier
         </button>
