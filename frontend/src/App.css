@@ -249,6 +249,7 @@ textarea {
   border-radius: 10px;
   border: #717377 solid 1px;
   font-style: italic;
+  padding: 10px;
 }
 
 .buttonRetourNav {
@@ -327,9 +328,9 @@ select {
 
 .email {
   text-align: center;
-  margin-right: 50rem;
-  margin-left: 50rem;
-  margin-top: 5rem;
+  margin-right: 36rem;
+  margin-left: 36rem;
+  margin-top: 3rem;
 }
 
 .labelEmail {
@@ -338,24 +339,24 @@ select {
 }
 
 .inputEmail {
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .titleAbonner {
   font-family: cursive;
   font-size: 5rem;
   text-align: center;
-  margin: 0 0 3rem 0;
+  margin: 0 0 1rem 0;
 }
 
 .navbarAbonner {
   font-family: serif;
   font-size: 20px;
   background-color: rgb(198, 198, 184);
-  padding-top: 8rem;
+  padding-top: 6rem;
 }
 .footerAbonner {
-  margin-top: 10rem;
+  margin-top: 6rem;
 }
 
 .containerAbonner {

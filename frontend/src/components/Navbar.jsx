@@ -14,7 +14,7 @@ function Navbar({ updateFilterParams }) {
           updateFilterParams={updateFilterParams}
         />
         <Filter
-          title="Toutes nos archives"
+          title="Toutes nos archives :"
           type="archive"
           props="publishedAt"
           updateFilterParams={updateFilterParams}
