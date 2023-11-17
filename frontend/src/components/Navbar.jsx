@@ -44,9 +44,9 @@ function Navbar() {
             contact
           </button>
         </a>
-        <button type="button" className="buttonNavbar">
-          Panier
-        </button>
+        <Link to="/abonnement" className="buttonNavbarAbonner">
+          S'abonner
+        </Link>
       </div>
     </div>
   );

@@ -3,8 +3,8 @@ import ReactDOM from "react-dom/client";
 import axios from "axios";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
+import AbonnerPage from "./pages/AbonnerPage";
 import ArticlePage from "./pages/ArticlePage";
-// import ActualitesPage from "./pages/ArchivesPage";
 
 const router = createBrowserRouter([
   {
@@ -43,20 +43,10 @@ const router = createBrowserRouter([
       return article;
     },
   },
-  // {
-  //   path: "/article/:articleId",
-  //   element: <ArchivesPage />,
-  //   loader: async ({ params }) => {
-  //     // Récupération de l'article spécifique
-  //     const archive = await axios
-  //       .get(
-  //         `${import.meta.env.VITE_BACKEND_URL}/api/article/${params.articleId}`
-  //       )
-  //       .then((res) => res.data);
-
-  //     return archive;
-  //   },
-  // },
+  {
+    path: "/abonnement",
+    element: <AbonnerPage />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

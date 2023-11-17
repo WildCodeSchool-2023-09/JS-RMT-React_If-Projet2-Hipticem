@@ -172,6 +172,7 @@ button {
   border-radius: 10px;
   border: #717377 solid 1px;
   font-style: italic;
+  padding: 10px;
 }
 
 .formulaire {
@@ -263,6 +264,7 @@ select {
   font-family: serif;
   text-align: center;
   font-style: italic;
+  margin-left: 5px;
 }
 
 .archive {
@@ -274,10 +276,83 @@ select {
   border-radius: 10px;
   border: #717377 solid 1px;
   font-style: italic;
+  padding: 10px;
 }
 
 .hautDePage {
   position: fixed;
   right: 0;
   border-radius: 50%;
+  background-color: #e5e5ca;
+  margin: 10px 20px 10px 10px;
+  font-size: 20px;
+  cursor: context-menu;
+  font-family: serif;
+  border: #717377 solid 1px;
+  font-style: italic;
+}
+
+.buttonNavbarAbonner {
+  background-color: #e5e5ca;
+  margin: 10px 20px 10px 10px;
+  font-size: 20px;
+  cursor: context-menu;
+  font-family: serif;
+  border-radius: 10px;
+  border: #717377 solid 1px;
+  font-style: italic;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.buttonAbonner {
+  background-color: #e5e5ca;
+  margin: 10px 20px 10px 10px;
+  font-size: 20px;
+  cursor: context-menu;
+  font-family: serif;
+  border-radius: 10px;
+  border: #717377 solid 1px;
+  font-style: italic;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.email {
+  text-align: center;
+  margin-right: 50rem;
+  margin-left: 50rem;
+  margin-top: 5rem;
+}
+
+.labelEmail {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.inputEmail {
+  margin-top: 3rem;
+}
+
+.titleAbonner {
+  font-family: cursive;
+  font-size: 5rem;
+  text-align: center;
+  margin: 0 0 3rem 0;
+}
+
+.navbarAbonner {
+  font-family: serif;
+  font-size: 20px;
+  background-color: rgb(198, 198, 184);
+  padding-top: 8rem;
+}
+.footerAbonner {
+  margin-top: 10rem;
+}
+
+.containerAbonner {
+  margin: 0;
 }
