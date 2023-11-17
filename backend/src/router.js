@@ -23,8 +23,13 @@ router.get("/articles", (req, res) => {
   let query = "SELECT * FROM article";
   const values = [];
   if (req.query.author) {
-    query += " where author = ?";
+    query += " WHERE author = ?";
     values.push(req.query.author);
+  }
+
+  if (req.query.archive) {
+    query += ` ${query.includes("WHERE") ? "AND" : "WHERE"} publishedAt = ?`;
+    values.push(req.query.archive);
   }
   query += " LIMIT 6";
 
