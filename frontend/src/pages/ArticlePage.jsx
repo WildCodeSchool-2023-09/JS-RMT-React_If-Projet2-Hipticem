@@ -23,7 +23,7 @@ function ArticlePage() {
         <p className="descriptionArticle">{article.description}</p>
         <p className="authorArticle">{article.author}</p>
       </div>
-      <Link to="/" className="buttonRetour">
+      <Link to="/" className="buttonRetourBas">
         Retour
       </Link>
     </div>

@@ -10,26 +10,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    loader: async ({ request }) => {
-      const url = new URL(request.url);
-
-      const items = await axios
-        .get(`${import.meta.env.VITE_BACKEND_URL}/api/articles${url.search}`)
-        .then((res) => res.data);
-
-      const authors = await axios
-        .get(`${import.meta.env.VITE_BACKEND_URL}/api/authors`)
-        .then((res) => res.data)
-        .catch((err) => console.error(err));
-
-      const archives = await axios
-        .get(`${import.meta.env.VITE_BACKEND_URL}/api/archives`)
-        .then((res) => res.data)
-        .catch((err) => console.error(err));
-      return { items, authors, archives };
-    },
   },
-
   {
     path: "/article/:articleId",
     element: <ArticlePage />,

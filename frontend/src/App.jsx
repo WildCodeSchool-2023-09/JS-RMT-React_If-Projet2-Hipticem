@@ -1,4 +1,5 @@
-import { useLoaderData } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import "./App.css";
 import Carte from "./components/Carte";
 import Navbar from "./components/Navbar";
@@ -6,11 +7,43 @@ import Formulaire from "./components/Formulaire";
 import Footer from "./components/footer";
 
 function App() {
-  const { items } = useLoaderData();
+  const [items, setItems] = useState([]);
+  const [filterParams, setFilterParams] = useState({
+    author: "tous",
+    archive: "tous",
+  });
+
+  const updateFilterParams = (value, type) => {
+    setFilterParams((prev) => ({ ...prev, [type]: value }));
+  };
+
+  const getQuery = () => {
+    let query = "";
+    if (filterParams.author !== "tous") {
+      query += `?author=${filterParams.author}`;
+    }
+
+    if (filterParams.archive !== "tous") {
+      query += `${query.includes("?") ? "&" : "?"}archive=${
+        filterParams.archive
+      }`;
+    }
+    return query;
+  };
+
+  useEffect(() => {
+    const query = getQuery();
+
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/api/articles${query}`)
+      .then((res) => setItems(res.data))
+      .catch((err) => console.error(err));
+  }, [filterParams]);
+
   return (
     <div className="App">
       <h1 className="title">Time News</h1>
-      <Navbar />
+      <Navbar updateFilterParams={updateFilterParams} />
 
       <div>
         <a href="#hautDePage">
@@ -25,7 +58,7 @@ function App() {
         ))}
       </div>
 
-      <div>
+      <div className="containerForms">
         <Formulaire />
       </div>
       <div>

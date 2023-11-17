@@ -14,13 +14,9 @@ function Formulaire() {
 
   const handleChange = (e) => {
     const inputName = e.target.name;
-
     const inputValue = e.target.value;
-
     const newFormulaireData = { ...formulaire };
-
     newFormulaireData[inputName] = inputValue;
-
     setFormulaire(newFormulaireData);
   };
 
@@ -36,7 +32,7 @@ function Formulaire() {
 
     setTimeout(() => {
       setSendMessage("");
-    }, 2500);
+    }, 4000);
   };
 
   const sendEmail = (e) => {
@@ -84,7 +80,7 @@ function Formulaire() {
             name="nom"
             placeholder="Votre nom"
             onChange={handleChange}
-            value={formulaire.Nom}
+            value={formulaire.nom}
             required
           />
         </label>
@@ -95,7 +91,7 @@ function Formulaire() {
             name="email"
             placeholder="Votre email"
             onChange={handleChange}
-            value={formulaire.Email}
+            value={formulaire.email}
             required
           />
         </label>
@@ -106,7 +102,7 @@ function Formulaire() {
             name="message"
             placeholder="Votre Message"
             onChange={handleChange}
-            value={formulaire.Message}
+            value={formulaire.message}
             required
           />
         </label>
