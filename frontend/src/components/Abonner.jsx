@@ -4,8 +4,11 @@ function Abonner() {
   return (
     <div>
       <form>
-        <label className="labelEmail">
-          Email
+        <label>
+          <div className="labelEmail">
+            Saisis ton Email pour t'abonner à la newsletter :
+          </div>
+
           <input
             type="text"
             name="Email"
