@@ -3,9 +3,17 @@ import React from "react";
 function Abonner() {
   return (
     <div>
-      <button type="button" className="buttonNavbar">
-        S'abonner
-      </button>
+      <form>
+        <label className="labelEmail">
+          Email
+          <input
+            type="text"
+            name="Email"
+            placeholder="Votre email"
+            className="inputEmail"
+          />
+        </label>
+      </form>
     </div>
   );
 }

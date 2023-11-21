@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Abonner from "../components/Abonner";
 import Footer from "../components/footer";
 
 function AbonnerPage() {
@@ -10,18 +11,11 @@ function AbonnerPage() {
         <h2 className="titleAbonner">Time News</h2>
       </div>
       <div className="navbarAbonner"> </div>
+      <div>
+        <Abonner />
+      </div>
       <div className="email">
-        <label className="labelEmail">
-          Email
-          <input
-            type="text"
-            name="Email"
-            placeholder="Votre email"
-            className="inputEmail"
-          />
-        </label>
-
-        <button type="submit" className="buttonAbonner">
+        <button type="button" className="buttonAbonner">
           S'abonner
         </button>
         <Link to="/" className="buttonAbonner">
