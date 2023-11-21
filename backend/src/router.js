@@ -84,6 +84,9 @@ router.get("/archives", (req, res) => {
     });
 });
 
+// router.use((req, res) => {
+//   res.status(404).sendFile(__dirname + "/path/to/404.html");
+// });
 /* ************************************************************************* */
 
 module.exports = router;

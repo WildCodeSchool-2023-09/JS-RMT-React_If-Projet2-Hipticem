@@ -42,7 +42,15 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="title">Time News</h1>
+      <div className="logotitle">
+        <img
+          className="logo"
+          src="./src/assets/logo.jpeg"
+          alt="logo Time News"
+        />
+        <h1 className="title">Time News</h1>
+      </div>
+
       <Navbar updateFilterParams={updateFilterParams} />
 
       <div>
